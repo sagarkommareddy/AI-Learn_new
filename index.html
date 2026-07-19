@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="membership.css" />
   <link rel="stylesheet" href="branding.css" />
   <link rel="stylesheet" href="visual-refresh.css" />
+  <link rel="stylesheet" href="chatbot.css" />
 </head>
 <body>
   <header class="site-header">
@@ -77,6 +78,15 @@
 
   </main>
   <footer><a class="logo" href="#home">THE MIRROR<span class="logo-lux">LUX STUDIO</span></a><div><p>2207 North Halsted, Chicago</p><p>Tue—Sat · 9am—7pm</p></div><div class="footer-links" aria-label="Social media links"><a class="social-icon instagram-icon" href="https://instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1"></circle></svg></a><a class="social-icon tiktok-icon" href="https://tiktok.com" target="_blank" rel="noreferrer" aria-label="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3c.4 2.6 2 4.2 4 4.4v3.1c-1.5 0-2.8-.5-4-1.3v6.2a5.3 5.3 0 1 1-4.6-5.2v3.2a2.2 2.2 0 1 0 1.5 2.1V3h3.1Z"></path></svg></a><a class="social-icon facebook-icon" href="https://facebook.com" target="_blank" rel="noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.6 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.6-1.5H17V3.9c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.5-4 4.1V10H8v3h2.6v8h3Z"></path></svg></a><a class="social-icon email-icon" href="mailto:hello@themirrorluxstudio.com" aria-label="Email The Mirror Lux Studio"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m4 7 8 6 8-6"></path></svg></a></div><p class="copyright">© 2026 The Mirror Lux Studio</p></footer>
+  <aside class="chatbot" aria-label="Friendly Stylish chat assistant">
+    <section class="chat-panel" id="chat-panel" aria-hidden="true">
+      <header class="chat-header"><div><span class="status-dot"></span><p>Friendly Stylish</p><small>Your beauty sidekick</small></div><button class="chat-close" type="button" aria-label="Close chat">×</button></header>
+      <div class="chat-messages" id="chat-messages" aria-live="polite"><div class="chat-bubble bot-bubble">Hi lovely! I’m Friendly Stylish. Need help finding a service, booking a visit, or joining the collective?</div></div>
+      <div class="quick-replies"><button type="button" data-chat="What services do you offer?">Services</button><button type="button" data-chat="How do I book?">Book</button><button type="button" data-chat="Tell me about membership">Membership</button></div>
+      <form class="chat-form" id="chat-form"><label class="sr-only" for="chat-input">Ask Friendly Stylish a question</label><input id="chat-input" type="text" autocomplete="off" placeholder="Ask us anything..." required /><button type="submit" aria-label="Send message">↑</button></form>
+    </section>
+    <button class="chat-launcher" id="chat-launcher" type="button" aria-expanded="false" aria-controls="chat-panel"><span class="chat-sparkle">✦</span><span>Chat with Friendly Stylish</span></button>
+  </aside>
   <dialog id="membership-dialog"><button class="close-dialog" aria-label="Close">×</button><p class="eyebrow">The inner circle</p><h2>Let’s make it official.</h2><p>Share your details and we’ll send your membership welcome.</p><form id="member-form"><label>Your name<input type="text" required autocomplete="name" /></label><label>Email address<input type="email" required autocomplete="email" /></label><button class="button button-dark" type="submit">Join The Mirror <span>→</span></button></form><p class="member-message" aria-live="polite"></p></dialog>
   <script src="script.js"></script>
 </body>
