@@ -1,0 +1,4 @@
+dialog form { display: flex; flex-direction: column; gap: 16px; }
+dialog form .button { margin-top: 6px; }
+dialog input { width: 100%; }
+.member-message { min-height: 20px; margin: 14px 0 0; font-size: 13px; }

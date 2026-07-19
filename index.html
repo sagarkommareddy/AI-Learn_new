@@ -1,0 +1,82 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="MUSE Hair & Beauty — considered care, effortless confidence." />
+  <title>MUSE — Hair & Beauty</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="membership.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="#home" aria-label="Muse home">MUSE<span>®</span></a>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="#services">Services</a><a href="#about">Our story</a><a href="#membership">Membership</a>
+    </nav>
+    <a class="nav-book" href="#booking">Book a visit <span>↗</span></a>
+    <button class="menu-toggle" aria-label="Open menu">☰</button>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Hair · Beauty · Ritual</p>
+        <h1>Make space for<br /><em>yourself.</em></h1>
+        <p class="hero-text">A considered salon experience for the person you are becoming. Come as you are, leave feeling entirely like you.</p>
+        <div class="hero-actions"><a class="button button-dark" href="#booking">Reserve your chair <span>→</span></a><a class="text-link" href="#services">Explore services <span>↓</span></a></div>
+      </div>
+      <div class="hero-art">
+        <div class="arch-image hero-image"></div>
+        <div class="hero-note"><span>01</span><p>Beautiful<br />by design.</p></div>
+        <div class="orb orb-one"></div><div class="orb orb-two"></div>
+      </div>
+      <p class="side-caption">Established in Chicago · 2016</p>
+    </section>
+
+    <section class="intro" id="about">
+      <p class="eyebrow">Welcome to Muse</p>
+      <h2>More than a fresh cut.<br />A little <em>reset.</em></h2>
+      <p>We pair technical craft with a genuine sense of ease. From our quiet, sunlit studio to the last sweep of a brush, everything is designed around how you want to feel.</p>
+      <a class="text-link" href="#booking">Meet your new ritual <span>→</span></a>
+    </section>
+
+    <section class="services" id="services">
+      <div class="section-heading"><div><p class="eyebrow">The menu</p><h2>Care, curated.</h2></div><a class="text-link" href="#booking">View all services <span>→</span></a></div>
+      <div class="service-grid">
+        <article class="service-card card-lilac"><div class="card-number">01</div><div class="service-icon hair-icon">〰</div><h3>Hair</h3><p>Cut, colour, treatments<br />and signature styling.</p><a href="#booking" aria-label="Book a hair service">Explore <span>↗</span></a></article>
+        <article class="service-card card-peach"><div class="card-number">02</div><div class="service-icon face-icon">◠</div><h3>Skin</h3><p>Facials and thoughtful<br />skin-first rituals.</p><a href="#booking" aria-label="Book a skin service">Explore <span>↗</span></a></article>
+        <article class="service-card card-olive"><div class="card-number">03</div><div class="service-icon nail-icon">✣</div><h3>Nails</h3><p>Natural nail care with<br />a modern point of view.</p><a href="#booking" aria-label="Book a nail service">Explore <span>↗</span></a></article>
+      </div>
+    </section>
+
+    <section class="statement"><p class="eyebrow">The Muse standard</p><h2>Slow beauty.<br /><em>Big feeling.</em></h2><div class="statement-copy"><p>We believe the best kind of beauty feels unmistakably personal. Our team listens closely, makes expert suggestions, and leaves room for you to simply exhale.</p><a class="button button-light" href="#membership">Become a member <span>→</span></a></div></section>
+
+    <section class="booking" id="booking">
+      <div class="booking-image"></div>
+      <div class="booking-panel">
+        <p class="eyebrow">Book your moment</p><h2>Let’s find your<br /><em>perfect hour.</em></h2>
+        <form id="booking-form">
+          <label>What are you in the mood for?<select required><option value="">Choose a service</option><option>Haircut & style</option><option>Colour refresh</option><option>Skin ritual</option><option>Manicure</option></select></label>
+          <label>When suits you?<input type="date" required /></label>
+          <button class="button button-dark" type="submit">Find available times <span>→</span></button>
+        </form>
+        <p class="form-message" id="booking-message" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <section class="membership" id="membership">
+      <div><p class="eyebrow">The inner circle</p><h2>Good hair,<br /><em>on repeat.</em></h2><p>Join the Muse collective for priority booking, member-only pricing, and a little something extra every visit.</p></div>
+      <div class="membership-card"><p class="card-label">MUSE MEMBERSHIP</p><p class="price">$89 <span>/ month</span></p><ul><li>Priority booking windows</li><li>One monthly blowout</li><li>10% off all services</li><li>Birthday ritual on us</li></ul><button class="button button-dark" id="join-button">Join the collective <span>→</span></button></div>
+    </section>
+
+    <section class="instagram"><div class="section-heading"><div><p class="eyebrow">Follow along</p><h2>In our chair.</h2></div><a class="text-link" href="https://instagram.com" target="_blank" rel="noreferrer">@muse.studio <span>↗</span></a></div><div class="insta-grid"><div class="insta one"></div><div class="insta two"></div><div class="insta three"></div><div class="insta four"></div></div></section>
+  </main>
+  <footer><a class="logo" href="#home">MUSE<span>®</span></a><div><p>2207 North Halsted, Chicago</p><p>Tue—Sat · 9am—7pm</p></div><div class="footer-links"><a href="https://instagram.com" target="_blank" rel="noreferrer">Instagram</a><a href="https://tiktok.com" target="_blank" rel="noreferrer">TikTok</a><a href="mailto:hello@musestudio.com">Email us</a></div><p class="copyright">© 2024 Muse Studio</p></footer>
+  <dialog id="membership-dialog"><button class="close-dialog" aria-label="Close">×</button><p class="eyebrow">The inner circle</p><h2>Let’s make it official.</h2><p>Share your details and we’ll send your membership welcome.</p><form id="member-form"><label>Your name<input type="text" required autocomplete="name" /></label><label>Email address<input type="email" required autocomplete="email" /></label><button class="button button-dark" type="submit">Join Muse <span>→</span></button></form><p class="member-message" aria-live="polite"></p></dialog>
+  <script src="script.js"></script>
+</body>
+</html>
