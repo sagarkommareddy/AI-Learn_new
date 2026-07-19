@@ -1,0 +1,43 @@
+:root { --coral: #f87568; --cobalt: #355dde; --sun: #f7c948; --aqua: #7fd6c6; --berry: #a64369; }
+
+body { background: #fffbf8; }
+.hero {
+  background:
+    radial-gradient(circle at 84% 15%, #c9ddff 0 13%, transparent 13.2%),
+    radial-gradient(circle at 93% 72%, #ffe59b 0 14%, transparent 14.2%),
+    radial-gradient(circle at 46% 100%, #c8eee1 0 15%, transparent 15.2%),
+    linear-gradient(118deg, #fce3ef 0%, #f3ddff 46%, #fff0ca 100%);
+}
+.hero::before { content: ''; position: absolute; width: 180px; height: 180px; left: 7%; top: 13%; border: 1px solid rgba(166, 67, 105, .25); border-radius: 50%; }
+.hero::after { content: ''; position: absolute; width: 52px; height: 52px; left: 48%; bottom: 9%; background: #b8e9dc; border-radius: 14px; transform: rotate(22deg); }
+.hero .eyebrow { color: #a64369; }
+.hero-text { color: #5a4b62; }
+.hero-note { background: #fff0b9; box-shadow: 8px 8px 0 #cbb7e8; }
+.orb-one { background: #d9c6fa; }
+.orb-two { background: #ffb8cf; }
+.intro { background: linear-gradient(180deg, #fffaf5, #f4f7ff); }
+.services { background: #f4f7ff; padding-top: 18px; }
+.service-grid { gap: 20px; }
+.service-card { height: 480px; padding: 0; overflow: hidden; border-radius: 2px; box-shadow: 0 16px 30px rgba(46, 41, 50, .13); transition: transform .25s ease, box-shadow .25s ease; }
+.service-card:hover { transform: translateY(-7px) rotate(-.5deg); box-shadow: 0 25px 42px rgba(46, 41, 50, .2); }
+.card-lilac { background: #d9d5ff; }.card-peach { background: #ffcdbd; }.card-olive { background: #bde5d2; }
+.service-photo { height: 275px; overflow: hidden; }
+.service-photo img { width: 100%; height: 100%; display: block; object-fit: cover; object-position: center; filter: saturate(1.08); transition: transform .4s ease; }
+.service-card:hover .service-photo img { transform: scale(1.06); }
+.service-detail { position: relative; height: 205px; padding: 18px 23px 23px; }
+.service-detail .card-number { color: rgba(34, 32, 30, .58); font-weight: 700; letter-spacing: .9px; }
+.service-card h3 { font-size: 37px; margin: 17px 0 7px; }
+.service-card a { right: 23px; bottom: 18px; background: rgba(255,255,255,.54); border-radius: 30px; padding: 8px 11px; }
+.statement { background: linear-gradient(120deg, #302245, #713851 56%, #df6d62); }
+.membership { background: linear-gradient(135deg, #bde6da, #ccdcfb 52%, #fbd5df); }
+.booking-panel { background: linear-gradient(145deg, #fff1ce, #f8d2dc); }
+.instagram { background: #fffaf5; }
+.insta { border-radius: 18px; box-shadow: 0 10px 20px rgba(49, 42, 54, .12); }
+footer { background: #1b1734; }
+.footer-links { gap: 12px; }
+.social-icon { width: 39px; height: 39px; display: inline-flex; align-items: center; justify-content: center; color: #fff; border: 1px solid rgba(255,255,255,.42); border-radius: 50%; transition: transform .2s, background .2s; }
+.social-icon:hover { color: #fff; opacity: 1; transform: translateY(-3px); background: var(--coral); border-color: var(--coral); }
+.social-icon svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.tiktok-icon svg, .facebook-icon svg { fill: currentColor; stroke: none; }
+.email-icon svg { stroke-width: 1.8; }
+@media (max-width: 700px) { .service-card { height: 430px; }.service-photo { height: 235px; }.service-detail { height: 195px; }.footer-links { flex-direction: row; flex-wrap: wrap; }.social-icon { width: 36px; height: 36px; } }

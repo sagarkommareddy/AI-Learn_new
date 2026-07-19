@@ -1,0 +1,15 @@
+.logo {
+  display: inline-flex;
+  flex-direction: column;
+  font-size: 18px;
+  letter-spacing: -0.8px;
+  line-height: .9;
+}
+
+.logo .logo-lux {
+  font: 600 8px 'DM Sans', sans-serif;
+  letter-spacing: 2.6px;
+  margin: 7px 0 0 1px;
+}
+
+footer .logo { font-size: 17px; }

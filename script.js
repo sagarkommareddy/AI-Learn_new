@@ -17,7 +17,7 @@ document.querySelector('#member-form').addEventListener('submit', (event) => {
   event.preventDefault();
   const name = event.currentTarget.querySelector('input[type="text"]').value.trim();
   event.currentTarget.reset();
-  document.querySelector('.member-message').textContent = `Welcome to Muse, ${name}. Check your inbox for your next steps.`;
+  document.querySelector('.member-message').textContent = `Welcome to The Mirror, ${name}. Check your inbox for your next steps.`;
 });
 
 document.querySelector('.menu-toggle').addEventListener('click', () => {
