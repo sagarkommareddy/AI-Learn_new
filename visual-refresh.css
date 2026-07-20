@@ -31,6 +31,23 @@ body { background: #fffbf8; }
 .statement { background: linear-gradient(120deg, #302245, #713851 56%, #df6d62); }
 .membership { background: linear-gradient(135deg, #bde6da, #ccdcfb 52%, #fbd5df); }
 .booking-panel { background: linear-gradient(145deg, #fff1ce, #f8d2dc); }
+.booking-panel .urgent-option { flex-direction: row; align-items: flex-start; gap: 11px; padding: 13px 14px; background: rgba(255, 255, 255, .48); border: 1px solid rgba(166, 67, 105, .28); letter-spacing: 0; text-transform: none; cursor: pointer; }
+.urgent-option input { width: 17px; height: 17px; margin: 1px 0 0; accent-color: var(--berry); }
+.urgent-option span { display: grid; gap: 3px; }
+.urgent-option strong { color: #803050; font-size: 13px; }
+.urgent-option small { color: #5a4b62; font-size: 12px; font-weight: 400; line-height: 1.35; }
+.availability { padding-top: 7px; }
+.availability-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+.availability-heading .eyebrow { margin: 0; color: #803050; }
+#availability-summary { margin: 0; color: #5a4b62; font-size: 12px; text-align: right; }
+.time-slots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 10px; }
+.time-slot { position: relative; display: block; cursor: pointer; }
+.time-slot input { position: absolute; opacity: 0; pointer-events: none; }
+.time-slot span { display: block; padding: 10px 7px; border: 1px solid rgba(46, 41, 50, .34); background: rgba(255, 255, 255, .35); color: var(--ink); font-size: 12px; font-weight: 600; letter-spacing: 0; text-align: center; text-transform: none; transition: background .2s, border-color .2s, color .2s; }
+.time-slot:hover span, .time-slot input:focus-visible + span { border-color: #803050; }
+.time-slot input:checked + span { background: #803050; border-color: #803050; color: #fff; }
+.priority-slot span { border-color: #a64369; color: #803050; }
+@media (max-width: 700px) { .availability-heading { display: block; }.availability-heading .eyebrow { margin-bottom: 5px; }#availability-summary { text-align: left; }.time-slots { grid-template-columns: repeat(2, 1fr); } }
 .instagram { background: #fffaf5; }
 .insta { border-radius: 18px; box-shadow: 0 10px 20px rgba(49, 42, 54, .12); }
 footer { background: #1b1734; }

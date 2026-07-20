@@ -2,6 +2,73 @@ const bookingForm = document.querySelector('#booking-form');
 const bookingMessage = document.querySelector('#booking-message');
 const membershipDialog = document.querySelector('#membership-dialog');
 
+const bookingService = bookingForm.querySelector('select');
+const bookingDate = bookingForm.querySelector('input[type="date"]');
+const urgentCare = document.querySelector('#urgent-care');
+const availability = document.querySelector('#availability');
+const availabilitySummary = document.querySelector('#availability-summary');
+const timeSlots = document.querySelector('#time-slots');
+const bookingButton = bookingForm.querySelector('button[type="submit"]');
+const slotsByService = {
+  'Haircut & style': ['9:00 AM', '10:30 AM', '1:00 PM', '3:30 PM', '5:00 PM'],
+  'Colour refresh': ['9:00 AM', '12:00 PM', '2:30 PM', '4:30 PM'],
+  'Skin ritual': ['10:00 AM', '11:30 AM', '2:00 PM', '4:00 PM', '5:30 PM'],
+  Manicure: ['9:30 AM', '11:00 AM', '1:30 PM', '3:00 PM', '5:30 PM']
+};
+
+bookingDate.min = new Date().toISOString().split('T')[0];
+
+function getPrettyDate() {
+  return new Date(`${bookingDate.value}T12:00:00`).toLocaleDateString('en-US', {
+    weekday: 'long', month: 'long', day: 'numeric'
+  });
+}
+
+function showAvailability() {
+  if (!bookingService.value || !bookingDate.value) {
+    availability.hidden = true;
+    bookingButton.disabled = false;
+    return;
+  }
+  const slots = [...slotsByService[bookingService.value]];
+  if (urgentCare.checked) slots.unshift('Next available - 9:00 AM');
+  availability.hidden = false;
+  bookingButton.disabled = true;
+  availabilitySummary.textContent = `${bookingService.value} on ${getPrettyDate()}`;
+  timeSlots.replaceChildren();
+  slots.forEach((slot, index) => {
+    const label = document.createElement('label');
+    label.className = `time-slot${urgentCare.checked && index === 0 ? ' priority-slot' : ''}`;
+    const input = document.createElement('input');
+    input.type = 'radio';
+    input.name = 'appointment-time';
+    input.value = slot;
+    input.required = true;
+    const text = document.createElement('span');
+    text.textContent = slot;
+    label.append(input, text);
+    timeSlots.append(label);
+  });
+}
+
+bookingService.addEventListener('change', showAvailability);
+bookingDate.addEventListener('change', showAvailability);
+urgentCare.addEventListener('change', showAvailability);
+timeSlots.addEventListener('change', () => {
+  bookingButton.disabled = !bookingForm.querySelector('input[name="appointment-time"]:checked');
+});
+bookingForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+  event.stopImmediatePropagation();
+  const selectedSlot = bookingForm.querySelector('input[name="appointment-time"]:checked');
+  if (!selectedSlot) {
+    bookingMessage.textContent = 'Choose a service, date, and available time to reserve your appointment.';
+    return;
+  }
+  const urgentNote = urgentCare.checked ? ' Your urgent-care request has been marked for priority.' : '';
+  bookingMessage.textContent = `You’re booked for ${bookingService.value.toLowerCase()} on ${getPrettyDate()} at ${selectedSlot.value}.${urgentNote}`;
+});
+
 bookingForm.addEventListener('submit', (event) => {
   event.preventDefault();
   const service = bookingForm.querySelector('select').value;

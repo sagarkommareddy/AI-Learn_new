@@ -65,6 +65,11 @@
         <form id="booking-form">
           <label>What are you in the mood for?<select required><option value="">Choose a service</option><option>Haircut & style</option><option>Colour refresh</option><option>Skin ritual</option><option>Manicure</option></select></label>
           <label>When suits you?<input type="date" required /></label>
+          <label class="urgent-option" for="urgent-care"><input id="urgent-care" type="checkbox" /><span><strong>Urgent care</strong><small>Need a sooner visit? We’ll prioritize the earliest available slot.</small></span></label>
+          <div class="availability" id="availability" hidden aria-live="polite">
+            <div class="availability-heading"><p class="eyebrow">Available times</p><p id="availability-summary"></p></div>
+            <div class="time-slots" id="time-slots" role="radiogroup" aria-label="Available appointment times"></div>
+          </div>
           <button class="button button-dark" type="submit">Find available times <span>→</span></button>
         </form>
         <p class="form-message" id="booking-message" aria-live="polite"></p>
